@@ -31,7 +31,7 @@ public class BUILDER
         }
 
     public void testAllThatJazz(Activity activity) {
-        String url = "https://api.jsonbin.io/v3/b/5f726a107243cd7e8245d58b";  // THAT should be in a strings.xml file!
+        String url = activity.getString(R.string.TannerURL);;  // THAT should be in a strings.xml file!
 
         RequestQueue queue = Volley.newRequestQueue(activity);
 

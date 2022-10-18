@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">VollyGsonAndJsonApplication</string>
     <string name="title_item_detail">Item Detail</string>
+
+    <string name="TannerURL">"https://api.jsonbin.io/v3/b/5f726a107243cd7e8245d58b"</string>
+
+    <string name="BriggsURL">"https://api.jsonbin.io/v3/b/634e07f00e6a79321e2c10dd"</string>
 </resources>
