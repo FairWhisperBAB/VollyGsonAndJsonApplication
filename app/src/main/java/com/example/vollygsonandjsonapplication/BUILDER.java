@@ -31,7 +31,7 @@ public class BUILDER
         }
 
     public void testAllThatJazz(Activity activity) {
-        String url = "https://api.jsonbin.io/v3/b/5f726a107243cd7e8245d58b";  // THAT should be in a strings.xml file!
+        String url = activity.getString(R.string.BriggsURL);  // THAT should be in a strings.xml file!
 
         RequestQueue queue = Volley.newRequestQueue(activity);
 
@@ -42,7 +42,7 @@ public class BUILDER
                         // NEXT, we need to use GSON to turn that JSON into a model
                         try {
                             JSONObject object = response.getJSONObject("record");
-                            JSONArray array = object.getJSONArray("gameCompanies");
+                            JSONArray array = object.getJSONArray("NobleTeam");
 
                             ITEMS.clear();
                             MODEL_MAP.clear();
@@ -51,9 +51,9 @@ public class BUILDER
                             {
                                 JSONObject gameCompany = array.getJSONObject(i);
 
-                                String name = gameCompany.getString("name");
-                                String year = String.valueOf(gameCompany.getInt("year"));
-                                String recentConsole = gameCompany.getString("recentConsole");
+                                String name = gameCompany.getString("spartanName");
+                                String year = gameCompany.getString("birthDate");
+                                String recentConsole = gameCompany.getString("roleInReach");
 
                                 MODEL model = new MODEL(name, year, recentConsole);
 
