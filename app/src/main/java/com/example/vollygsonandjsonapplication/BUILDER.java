@@ -8,6 +8,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,14 +52,18 @@ public class BUILDER
                             {
                                 JSONObject gameCompany = array.getJSONObject(i);
 
-                                String name = gameCompany.getString("spartanName");
-                                String year = gameCompany.getString("birthDate");
-                                String recentConsole = gameCompany.getString("roleInReach");
+                                String Json = String.valueOf(gameCompany);
+                                Gson gson = new Gson();
+                                MODEL model = gson.fromJson(Json, MODEL.class);
 
-                                MODEL model = new MODEL(name, year, recentConsole);
+//                                String name = gameCompany.getString("spartanName");
+//                                String year = gameCompany.getString("birthDate");
+//                                String recentConsole = gameCompany.getString("roleInReach");
+
+//                                MODEL model = new MODEL(name, year, recentConsole);
 
                                 ITEMS.add(model);
-                                MODEL_MAP.put(name, model);
+                                MODEL_MAP.put(model.getGameCompanyNameName(), model);
                             }
                                 if (!active)
                                     activity.recreate();

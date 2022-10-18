@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class MODEL
 {
-    @SerializedName("name")
+    @SerializedName("spartanName")
     public String gameCompanyName;
-    @SerializedName("year")
+    @SerializedName("birthDate")
     public String gameCompanyYearFounded;
-    @SerializedName("recentConsole")
+    @SerializedName("roleInReach")
     public String gameCompanyLatestConsole;
 
 
